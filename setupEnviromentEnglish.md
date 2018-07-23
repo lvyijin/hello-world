@@ -54,7 +54,6 @@
 ```
 sudo -i
 ```
-
   ![login](https://github.com/lvyijin/learngit/blob/master/images/login.png "login")
   
 - Run the command to check whether the network is normal
@@ -96,7 +95,6 @@ If you want to use the host machine for development and run the test in the virt
 ```
 /root/gopath/src/github.com/alibaba/pouch
 ```
-
 - Add the local pouch folder to the shared folder of the virtual machine, as shown below:
 
 ![guazai](https://github.com/lvyijin/learngit/blob/master/images/guazai.png "guazai")
