@@ -10,14 +10,11 @@
 - Method 2：If you do not have Arilang installed, please download it on the nail tray, the links are as follows:
   + [Link of Mac](https://space.dingtalk.com/s/gwHOABma4QLOGlgkPQPaACBiMzk5ZWRjZTAyOGI0MTBkOGRkNTRjYzNkN2Q1NTFjOA) password：p5Sb
   + [Link of Windows](https://space.dingtalk.com/s/gwHOABmLzwLOGlgkPQPaACBhNzNjYjI5NTYxMzQ0NmUwOWRmMTFlN2UzMTYxNDQ4Mw) password：V7ms  
-
   Next we will take the intallation process of windows version as an example. After downloading, please click the msi file to install it. The key installation steps are as follows:
-  
   ![IP1](https://github.com/lvyijin/learngit/blob/master/images/first.png "First process")
   ![IP2](https://github.com/lvyijin/learngit/blob/master/images/second.png "Second process")
   
   Then click next button according to the default settings. Then the following error occurs: can not find the source file named **common.cab**.
-  
   ![IP3](https://github.com/lvyijin/learngit/blob/master/images/problem.png "Problem")
   
   Open the directory where the MSI is located and you will find that the file **common.cab** does not exist, which causes the installation to fail. The solution is as follows:
