@@ -74,7 +74,7 @@ systemctl start pouch
 ```
 pouch run -t -d busybox sh
 ```
-该命令会返回完整ID
+  该命令会返回完整ID
 - 登入启动的容器，命令行输入：
 ```
 pouch exec -it {ID} sh
@@ -85,31 +85,49 @@ pouch exec -it {ID} sh
   
 ## 开发环境配置
 ### 宿主机文件夹挂载至VirtualBox
-- 从alibaba/pouch/master fork一份代码到自己的账号下，得到master分支，将自己的master分支clone到本地，如下图：
+- 从https://github.com/alibaba/pouch/master fork一份代码到自己的github账号下，得到master分支，将自己的master分支clone到本地，如下图：
 
 ![guazai](https://github.com/lvyijin/learngit/blob/master/images/guazai.png "guazai")
 
-- 将clone到本地的pouch文件夹添加至虚拟机的共享文件夹，如下图：
+- 打开虚拟机，查看go的环境变量，命令行输入：
+```
+go env
+```
+可以看到
+```
+GOPATH="/root/gopath"
+```
+如果要使用宿主机进行开发，并在虚拟机中运行测试，应当将上述拉下来的repo挂载到虚拟机中的如下路径中：
+```
+/root/gopath/src/github.com/alibaba/pouch
+```
+
+- 将clone到本地的pouch文件夹添加至虚拟机的共享文件夹，操作如下图：
 
 ![guazai2](https://github.com/lvyijin/learngit/blob/master/images/guazai2.png "guazai2")
 
-- 在虚拟机中创建目录：/root/gopath/src/github.com/alibaba/pouch，应保证pouch文件夹中没有任何文件
+- 在虚拟机中创建目录：
+```
+mkdir /root/gopath/src/github.com/alibaba/pouch
+```
+应保证pouch文件夹中没有任何文件，如下图：
 
 ![pouch](https://github.com/lvyijin/learngit/blob/master/images/pouch.png "pouch")
 
 - 安装增强功能，如下图：
+
 ![improve](https://github.com/lvyijin/learngit/blob/master/images/improve.png "improve")
 
 - 切换到目录：/root/gopath/src/github.com/alibaba，依次输入如下命令：
 
    ``` 
    mount /dev/cdrom /media/cdrom 
-    /media/cdrom/VBoxLinuxAdditions.run 
-    mount -t vboxsf pouch /root/gopath/src/github.com/alibaba/pouch
-    cd pouch
-    ls -l
+   /media/cdrom/VBoxLinuxAdditions.run 
+   mount -t vboxsf pouch /root/gopath/src/github.com/alibaba/pouch
+   cd pouch
+   ls -l
    ```
-   出现下图：
+   出现下图，则挂载成功，这样就可以愉快地在宿主机进行开发了！
 ![rgua](https://github.com/lvyijin/learngit/blob/master/images/rgua.png "rgua")
 ![detail](https://github.com/lvyijin/learngit/blob/master/images/detail.png "detail")
 
