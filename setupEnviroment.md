@@ -85,10 +85,7 @@ pouch exec -it {ID} sh
   
 ## 开发环境配置
 ### 宿主机文件夹挂载至VirtualBox
-- 从https://github.com/alibaba/pouch/master fork一份代码到自己的github账号下，得到master分支，将自己的master分支clone到本地，如下图：
-
-![guazai](https://github.com/lvyijin/learngit/blob/master/images/guazai.png "guazai")
-
+- 从https://github.com/alibaba/pouch/master fork一份代码到自己的github账号下，得到master分支，将自己的master分支clone到本地
 - 打开虚拟机，查看go的环境变量，命令行输入：
 ```
 go env
@@ -103,6 +100,8 @@ GOPATH="/root/gopath"
 ```
 
 - 将clone到本地的pouch文件夹添加至虚拟机的共享文件夹，操作如下图：
+
+![guazai](https://github.com/lvyijin/learngit/blob/master/images/guazai.png "guazai")
 
 ![guazai2](https://github.com/lvyijin/learngit/blob/master/images/guazai2.png "guazai2")
 
