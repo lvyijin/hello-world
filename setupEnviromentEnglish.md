@@ -21,28 +21,28 @@
   ![IP3](https://github.com/lvyijin/learngit/blob/master/images/problem.png "Problem")
   
   Open the directory where the MSI is located and you will find that the file **common.cab** does not exist, which causes the installation to fail. The solution is as follows:
-  + 打开[链接](https://www.oracle.com/technetwork/cn/server-storage/virtualbox/downloads/index.html)，下载安装程序，如下图：
+  + Please open[link](https://www.oracle.com/technetwork/cn/server-storage/virtualbox/downloads/index.html) and download the installer:
   
-    ![应用程序](https://github.com/lvyijin/learngit/blob/master/images/boxexe.png "virtualBox应用程序")
+    ![installer](https://github.com/lvyijin/learngit/blob/master/images/boxexe.png "virtualBox应用程序")
     
-  + 打开cmd，切换到上述安装程序的下载路径，运行命令：
+  + Please open cmd and switch to the path of the above installer. Then run the command：
   ```
   VirtualBox-4.3.12-93733-Win.exe -extract
   ```
-  + 系统提示已经解压到:
+  + The system prompts it has been extracted to the following directory:
   ```
   c:\users\15627\AppData\Local\Temp\VirtualBox
   ```
    ![extract](https://github.com/lvyijin/learngit/blob/master/images/extract.png "extract")
    
-  + 进入该文件夹，里面有3个文件：**common.cab（前面安装失败，提示无法找到的文件）**、VirtualBox-5.2.8-r121009-MultiArch_amd64.msi（64位系统用）、VirtualBox-5.2.8-r121009-MultiArch_x86.msi（32位系统用）
-  + 点击运行VirtualBox-5.2.8-r121009-MultiArch_amd64.msi，按默认设置下一步即可安装成功，在桌面会发现如下图标，安装结束
+  + Please enter the directory and you can find three files, i.e. **common.cab**, VirtualBox-5.2.8-r121009-MultiArch_amd64.msi (for 64-bit system), VirtualBox-5.2.8-r121009-MultiArch_x86.msi (for 32-bit system)
+  + Please click and run VirtualBox-5.2.8-r121009-MultiArch_amd64.msi. Continue to click the next button according to the default settings. After installing successfully, the following icon will be found on the desktop.
   
   ![logo](https://github.com/lvyijin/learngit/blob/master/images/logo.png "logo")
    
-## 体验环境配置
-- 点击桌面图标打开VirtualBox
-- 新建-名称自定义-类型选择**Linux**-版本选择**Ubuntu (64-bit)**-继续-内存选择**1024M**-继续-使用**已有的虚拟硬盘文件**-选择上面步骤中下载的**vdi文件**-创建，具体如下图所示：
+## Configuring the experience environment
+- Please click the desktop icon to open VirtualBox
+- Click new - Custom name- Select type of ** Linux** - Select version of ** Ubuntu (64-bit) ** - Continue - Select memory of ** 1024M** - Continue - Select ** Existing Virtual Hard Disk File ** - Select the **vdi file** - Click create. The whole process is shown below:
 
   ![instance](https://github.com/lvyijin/learngit/blob/master/images/instance.png "instance")
   
@@ -50,74 +50,72 @@
   
   ![make](https://github.com/lvyijin/learngit/blob/master/images/make.png "make")
   
-- 启动新建实例，等待进入到登录阶段，用户名pouch，密码123456，切换到root用户，命令为：
+- Please start the new instance and set username as pouch, whose password is 123456. Run the following command to switch to the root.
 ```
 sudo -i
 ```
-具体如下图所示：
 
   ![login](https://github.com/lvyijin/learngit/blob/master/images/login.png "login")
   
-- 查看网络是否正常，命令行输入：
+- Run the command to check whether the network is normal
 ```
 ping www.alibaba-inc.com
 ```
-如下图，则网络正常
+It is normal if the outputs are as followings:
 
   ![ping](https://github.com/lvyijin/learngit/blob/master/images/ping.png "ping")
 
-- 启动pouch服务，命令行输入: 
+- Run the command to start the service of pouch
 ```
 systemctl start pouch
 ```
-- 启动一个busybox基础容器，命令行输入：
+- Run the comamnd to start a busybox container
 ```
 pouch run -t -d busybox sh
 ```
-  该命令会返回完整ID
-- 登入启动的容器，命令行输入：
+- Run the comamnd to login in the container
 ```
 pouch exec -it {ID} sh
 ```
-其中ID是上条命令输出的完整ID中的前六位，如下图：
+The ID is the first six digits of the complete ID of the previous command output, as shown below:
   
   ![id](https://github.com/lvyijin/learngit/blob/master/images/id.png "id")
   
-## 开发环境配置
-### 宿主机文件夹挂载至VirtualBox
-- 从https://github.com/alibaba/pouch/master fork一份代码到自己的github账号下，得到master分支，将自己的master分支clone到本地
-- 打开虚拟机，查看go的环境变量，命令行输入：
+## Configuring development environment
+### Please mount the host folder to VirtualBox
+- From link https://github.com/alibaba/pouch/master fork the codes to your own github account and clone your master branch to the local
+- Please open the virtualBox and enter the command to view the environment variables of go
 ```
 go env
 ```
-可以看到
+You will find GOPATH as follows:
 ```
 GOPATH="/root/gopath"
 ```
-如果要使用宿主机进行开发，并在虚拟机中运行测试，应当将上述拉下来的repo挂载到虚拟机中的如下路径中：
+If you want to use the host machine for development and run the test in the virtual machine, you should mount the above-mentioned pulled repo to the following path in the virtual machine:
 ```
 /root/gopath/src/github.com/alibaba/pouch
 ```
 
-- 将clone到本地的pouch文件夹添加至虚拟机的共享文件夹，操作如下图：
+- Add the local pouch folder to the shared folder of the virtual machine, as shown below:
 
 ![guazai](https://github.com/lvyijin/learngit/blob/master/images/guazai.png "guazai")
 
 ![guazai2](https://github.com/lvyijin/learngit/blob/master/images/guazai2.png "guazai2")
 
-- 在虚拟机中创建目录：
+- Please create a directory in the virtual machine：
 ```
 mkdir /root/gopath/src/github.com/alibaba/pouch
 ```
-应保证pouch文件夹中没有任何文件，如下图：
+You should ensure that there are no files in the pouch folder, as shown below:
 
 ![pouch](https://github.com/lvyijin/learngit/blob/master/images/pouch.png "pouch")
 
-- 安装增强功能，如下图：
+- Please install enhancements, as shown below:
 
 ![improve](https://github.com/lvyijin/learngit/blob/master/images/improve.png "improve")
 
-- 切换到目录：/root/gopath/src/github.com/alibaba，依次输入如下命令：
+- Please switch to the directory：/root/gopath/src/github.com/alibaba, and run the following commands in order.
 
    ``` 
    mount /dev/cdrom /media/cdrom 
@@ -126,6 +124,6 @@ mkdir /root/gopath/src/github.com/alibaba/pouch
    cd pouch
    ls -l
    ```
-   出现下图，则挂载成功，这样就可以愉快地在宿主机进行开发了！
+   If the outputs are as followings, the mount is successful. Then you can develop happily on the host machine!
 ![rgua](https://github.com/lvyijin/learngit/blob/master/images/rgua.png "rgua")
 ![detail](https://github.com/lvyijin/learngit/blob/master/images/detail.png "detail")
