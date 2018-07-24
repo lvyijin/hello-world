@@ -40,7 +40,7 @@
 ## Configuring the experience environment
 
 - Please click the desktop icon to open VirtualBox.
-- Click new - Customize name- Select type of ** Linux** - Select version of ** Ubuntu (64-bit) ** - Continue - Select memory of ** 1024M** - Continue - Select ** Existing Virtual Hard Disk File ** - Select the **vdi file** - Click create. The whole process is shown below:
+- Click new - Customize name- Select type of **Linux** - Select version of **Ubuntu (64-bit)** - Continue - Select memory of **1024M** - Continue - Select **Existing Virtual Hard Disk File** - Select the **vdi file** - Click create. The whole process is shown below:
 
   ![instance](https://github.com/lvyijin/learngit/blob/master/images/instance.png "instance")
   
