@@ -91,10 +91,7 @@ pouch exec -it {ID} sh
 ```
 go env
 ```
-可以看到：```GOPATH="/root/gopath"```如果要使用宿主机进行开发，并在虚拟机中运行测试，应当将上述拉下来的repo挂载到虚拟机中的如下路径中：
-```
-/root/gopath/src/github.com/alibaba/pouch
-```
+可以看到：```GOPATH="/root/gopath"```。如果要使用宿主机进行开发，并在虚拟机中运行测试，应当将上述拉下来的repo挂载到虚拟机中的路径```/root/gopath/src/github.com/alibaba/pouch```
 
 - 将clone到本地的pouch文件夹添加至虚拟机的共享文件夹，操作如下图：
 
