@@ -4,16 +4,14 @@
 - Please download the [ubuntuPouch.vdi](https://www.virtualbox.orgubuntuPouch.vdi). It is recommended to download this file in advance because it is relatively large (3.2G). 
 ### Download and install VirtualBox
 
-- Method 1: Open “Arirang” – click “Manage” – search for “VirtualBox” – click “Install”, as shown in the following figure：
+- The links are as follows:
 
-![IP](https://github.com/lvyijin/learngit/blob/master/images/installVirtualBox.png "Installation process")
-
-- Method 2：If you do not have Arilang installed, please download it on the nail tray, the links are as follows:
   + [Link of Mac](https://space.dingtalk.com/s/gwHOABma4QLOGlgkPQPaACBiMzk5ZWRjZTAyOGI0MTBkOGRkNTRjYzNkN2Q1NTFjOA) password：p5Sb
   + [Link of Windows](https://space.dingtalk.com/s/gwHOABmLzwLOGlgkPQPaACBhNzNjYjI5NTYxMzQ0NmUwOWRmMTFlN2UzMTYxNDQ4Mw) password：V7ms  
-  Next we will take the intallation process of windows version as an example. After downloading, please click the msi file to install it. The key installation steps are as follows:
+  Next we will take the intallation process of windows version as an example. After downloading, please click the msi file to install. The key installation steps are as follows:
   
   ![IP1](https://github.com/lvyijin/learngit/blob/master/images/first.png "First process")
+  
   ![IP2](https://github.com/lvyijin/learngit/blob/master/images/second.png "Second process")
   
   Then click next button according to the default settings. Then the following error occurs: can not find the source file named **common.cab**.
