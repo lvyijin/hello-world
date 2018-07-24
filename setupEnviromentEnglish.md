@@ -1,7 +1,7 @@
 # Configuring Experience Environment of PouchContainer Based on VirtualBox and Ubuntu16.04 
 ## Download preparation
 ### Download the virtual machine backup of the development environment
-- Please download ubuntuPouch.vdi directly in the group file. It is recommended to download this file in advance because it is relatively large (3.2G). 
+- Please download the [ubuntuPouch.vdi](https://www.virtualbox.orgubuntuPouch.vdi). It is recommended to download this file in advance because it is relatively large (3.2G). 
 ### Download and install VirtualBox
 
 - Method 1: Open “Arirang” – click “Manage” – search for “VirtualBox” – click “Install”, as shown in the following figure：
